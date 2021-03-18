@@ -37,40 +37,44 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView textViewName;
+        private final View layoutCellCategory;
 
 
         public ViewHolder(View view) {
             super(view);
             // Define click listener for the ViewHolder's View
-
             textViewName = view.findViewById(R.id.textViewName);
+            layoutCellCategory = view.findViewById(R.id.layoutCellCategory);
 
         }
 
         public TextView getTextViewName() {
             return textViewName;
         }
+        public View getLayoutCellCategory() {
+            return layoutCellCategory;
+        }
 
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public CategoryAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         // Create a new view, which defines the UI of the list item
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.cell_category, viewGroup, false);
 
-        return new CategoryAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull StudentAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CategoryAdapter.ViewHolder holder, int position) {
         final Category category=categories.get(position);
         holder.getTextViewName().setText(category.getName());
-        holder.getLayoutCellStudent().setOnClickListener(new View.OnClickListener() {
+        holder.getLayoutCellCategory().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ProductsActivity;
+                ProductsActivity.displayActivity(activity);
             }
         });
     }
