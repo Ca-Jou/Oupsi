@@ -17,7 +17,6 @@ public class EpsiActivity extends AppCompatActivity {
         Log.d("tag","############## onCreate ################# :"+getClass().getSimpleName());
     }
 
-
     @Override
     public void finish() {
         super.finish();
