@@ -7,9 +7,9 @@
     <application
         android:name=".EpsiApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/plastic_bottle"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/plastic_bottle"
         android:supportsRtl="true"
         android:theme="@style/Theme.OUPSI">
         <activity android:name=".StudentsWSActivity"></activity>
