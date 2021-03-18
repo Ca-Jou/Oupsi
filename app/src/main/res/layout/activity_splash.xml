@@ -13,5 +13,5 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:src="@drawable/logo-epsi" />
+        android:src="@drawable/logo" />
 </RelativeLayout>
