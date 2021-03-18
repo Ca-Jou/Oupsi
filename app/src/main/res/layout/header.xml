@@ -12,6 +12,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/arrow_back"
             android:visibility="gone" />
 
@@ -21,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:text="Epsi"
+            android:text="Oupsi"
             android:textSize="24sp"
             android:textColor="@android:color/white"/>
     </RelativeLayout>
