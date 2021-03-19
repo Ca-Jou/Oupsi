@@ -28,7 +28,7 @@ public class HomeActivity extends EpsiActivity implements View.OnClickListener {
                 CategoriesWSActivity.displayActivity(this);
                 break;
             case R.id.buttonStudents:
-                HomeActivity.displayActivity(this);
+                StudentsActivity.displayActivity(this);
                 break;
         }
     }

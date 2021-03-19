@@ -17,6 +17,8 @@
         <activity android:name=".CategoriesWSActivity"/>
         <activity android:name=".ProductsWSActivity"/>
         <activity android:name=".ProductActivity"/>
+        <activity android:name=".StudentsActivity"/>
+        <activity android:name=".StudentActivity"/>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
