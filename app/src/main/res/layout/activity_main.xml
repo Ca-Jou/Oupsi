@@ -29,6 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="@color/epsi_violet"
-        android:text="Products"/>
+        android:text="Categories"/>
 
 </LinearLayout>

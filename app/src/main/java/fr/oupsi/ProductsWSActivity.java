@@ -15,8 +15,12 @@ import java.util.ArrayList;
 
 public class ProductsWSActivity extends EpsiActivity {
 
-    public static void displayActivity(EpsiActivity activity){
+    private String url;
+
+    public static void displayActivity(EpsiActivity activity, String url){
+
         Intent intent=new Intent(activity, ProductsWSActivity.class);
+        intent.putExtra("url", url);
         activity.startActivity(intent);
     }
     private ArrayList<Product> products;
@@ -33,8 +37,6 @@ public class ProductsWSActivity extends EpsiActivity {
         recyclerView.setAdapter(productAdapter);
 
 
-        // TODO change url
-        String url = "https://djemam.com/epsi/list.json";
         WSCall wsCall = new WSCall(url, new WSCall.Callback() {
             @Override
             public void onComplete(String result) {

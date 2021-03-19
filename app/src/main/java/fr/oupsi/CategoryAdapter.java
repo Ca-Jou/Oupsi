@@ -36,20 +36,20 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
      * (custom ViewHolder).
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textViewName;
+        private final TextView textViewTitle;
         private final View layoutCellCategory;
 
 
         public ViewHolder(View view) {
             super(view);
             // Define click listener for the ViewHolder's View
-            textViewName = view.findViewById(R.id.textViewName);
+            textViewTitle = view.findViewById(R.id.textViewTitle);
             layoutCellCategory = view.findViewById(R.id.layoutCellCategory);
 
         }
 
-        public TextView getTextViewName() {
-            return textViewName;
+        public TextView getTextViewTitle() {
+            return textViewTitle;
         }
         public View getLayoutCellCategory() {
             return layoutCellCategory;
@@ -70,11 +70,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.ViewHolder holder, int position) {
         final Category category=categories.get(position);
-        holder.getTextViewName().setText(category.getName());
+        holder.getTextViewTitle().setText(category.getTitle());
         holder.getLayoutCellCategory().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ProductsActivity.displayActivity(activity);
+                ProductsWSActivity.displayActivity(activity, category.getUrl());
             }
         });
     }
