@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 public class ProductsWSActivity extends EpsiActivity {
 
-    private String url;
 
     public static void displayActivity(EpsiActivity activity, String url){
 
@@ -30,6 +29,8 @@ public class ProductsWSActivity extends EpsiActivity {
         setContentView(R.layout.activity_products);
         setTitle("Products");
         showBack();
+        String url = getIntent().getExtras().getString("url","");
+
         products=new ArrayList<>();
         RecyclerView recyclerView=findViewById(R.id.recyclerViewProducts);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

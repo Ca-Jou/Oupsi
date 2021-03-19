@@ -77,7 +77,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.getLayoutCellProduct().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImageActivity.displayActivity(activity,product.getUrl(),product.getName());
+                ProductActivity.displayActivity(activity, product.getUrl(), product.getName(), product.getDescription());
             }
         });
     }

@@ -31,8 +31,8 @@ public class StudentsActivity extends EpsiActivity {
 
 //        RecyclerView recyclerView=findViewById(R.id.recyclerViewProducts);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        StudentAdapter studentAdapter=new StudentAdapter(this,);
-        recyclerView.setAdapter(productAdapter);
+       // StudentAdapter studentAdapter=new StudentAdapter(this);
+       // recyclerView.setAdapter(productAdapter);
     }
 
 }
