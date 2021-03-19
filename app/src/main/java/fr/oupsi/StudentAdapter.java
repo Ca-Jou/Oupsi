@@ -11,15 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHolder> {
     EpsiActivity activity;
-    ArrayList<Student> students;
+    Student student;
 
-    public StudentAdapter(EpsiActivity activity, ArrayList<Student> students){
+    public StudentAdapter(EpsiActivity activity, Student student){
         this.activity=activity;
-        this.students=students;
+        this.student=student;
     }
 
     /**
@@ -27,32 +25,43 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
      * (custom ViewHolder).
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        private final ImageView imageViewAvatar;
         private final TextView textViewName;
         private final TextView textViewEmail;
-        private final ImageView imageViewStudent;
-        private final View layoutCellStudent;
+        private final TextView textViewGroup;
+        private final TextView textViewUrl;
+//        private final View layoutProfileStudent;
 
         public ViewHolder(View view) {
             super(view);
-            // Define click listener for the ViewHolder's View
 
+            imageViewAvatar = view.findViewById(R.id.imageViewAvatar);
             textViewName = view.findViewById(R.id.textViewName);
             textViewEmail = view.findViewById(R.id.textViewEmail);
-            imageViewStudent = view.findViewById(R.id.imageViewStudent);
-            layoutCellStudent = view.findViewById(R.id.layoutCellStudent);
+            textViewGroup = view.findViewById(R.id.textViewGroup);
+            textViewUrl = view.findViewById(R.id.textViewUrl);
+
+//            layoutProfileStudent = view.findViewById(R.id.layoutProfileStudent);
+        }
+
+        public ImageView getImageViewAvatar() {
+            return imageViewAvatar;
         }
 
         public TextView getTextViewName() {
             return textViewName;
         }
+
         public TextView getTextViewEmail() {
             return textViewEmail;
         }
-        public ImageView getImageViewStudent() {
-            return imageViewStudent;
+
+        public TextView getTextViewGroup() {
+            return textViewGroup;
         }
-        public View getLayoutCellStudent() {
-            return layoutCellStudent;
+
+        public TextView getTextViewUrl() {
+            return textViewUrl;
         }
     }
 
@@ -61,27 +70,22 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         // Create a new view, which defines the UI of the list item
         View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.cell_student, viewGroup, false);
+                .inflate(R.layout.profile_student, viewGroup, false);
 
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final Student student=students.get(position);
+        Picasso.get().load("file:"+student.getAvatar()).into(holder.getImageViewAvatar());
         holder.getTextViewName().setText(student.getFirstName());
         holder.getTextViewEmail().setText(student.getEmail());
-        Picasso.get().load(student.getUrl()).into(holder.getImageViewStudent());
-        holder.getLayoutCellStudent().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ImageActivity.displayActivity(activity,student.getUrl(),student.getFirstName());
-            }
-        });
+        holder.getTextViewGroup().setText(student.getGroup());
+        holder.getTextViewUrl().setText(student.getUrl());
     }
 
     @Override
     public int getItemCount() {
-        return students.size();
+        return 0;
     }
 }

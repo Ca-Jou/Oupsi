@@ -14,37 +14,25 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class StudentsActivity extends EpsiActivity implements View.OnClickListener {
+public class StudentsActivity extends EpsiActivity {
 
     public static void displayActivity(EpsiActivity activity){
         Intent intent=new Intent(activity,StudentsActivity.class);
         activity.startActivity(intent);
     }
-    private ArrayList<Student> students;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group);
-        setTitle("Infos");
+        setTitle("student.getFirstName()");
         showBack();
-        students=new ArrayList<>();
 
-        Student johanna = new Student("johanna.png", "Jato", "Johanna", "johanna.jato@epsi.fr", "DevOps Groupe 1", "https://github.com/Johanna1506");
-        students.add(johanna);
-        Student camille = new Student("camille.png", "Jouan", "Camille", "camille.jouan@epsi.fr", "DevOps Groupe 1", "https://github.com/Ca-Jou");
-        students.add(camille);
+//        RecyclerView recyclerView=findViewById(R.id.recyclerViewProducts);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        StudentAdapter studentAdapter=new StudentAdapter(this,);
+        recyclerView.setAdapter(productAdapter);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.buttonJohanna:
-                HomeActivity.displayActivity(this);
-                break;
-            case R.id.buttonCamille:
-                HomeActivity.displayActivity(this);
-                break;
-        }
-    }
 }

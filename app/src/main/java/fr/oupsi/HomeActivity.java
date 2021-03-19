@@ -25,7 +25,7 @@ public class HomeActivity extends EpsiActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.buttonProduct:
-                StudentsActivity.displayActivity(this);
+                GroupActivity.displayActivity(this);
                 break;
             case R.id.buttonStudents:
                 GroupActivity.displayActivity(this);
