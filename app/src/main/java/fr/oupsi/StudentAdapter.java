@@ -63,7 +63,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
         holder.getLayoutCellStudent().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StudentActivity.displayActivity(activity, student.getFirstName());
+                StudentActivity.displayActivity(activity, student.getFirstName(), student.getLastName(), student.getGroup(), student.getEmail(), student.getUrl(), student.getAvatar());
             }
         });
     }

@@ -26,7 +26,7 @@ public class StudentsActivity extends EpsiActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_students);
-        setTitle("Students");
+        setTitle("Group Infos");
         showBack();
 
         students=new ArrayList<>();
