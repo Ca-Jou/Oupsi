@@ -6,9 +6,6 @@ import android.view.View;
 
 public class HomeActivity extends EpsiActivity implements View.OnClickListener {
 
-    String urlNature= "https://www.slate.fr/sites/default/files/styles/1060x523/public/lukasz-szmigiel-jfcviyfycus-unsplash.jpg";
-    String urlEspace= "https://www.entreprendre.fr/wp-content/uploads/AdobeStock_2015532431.jpg";
-
     public static void displayActivity(EpsiActivity activity){
         Intent intent = new Intent(activity,HomeActivity.class);
         activity.startActivity(intent);
@@ -28,10 +25,10 @@ public class HomeActivity extends EpsiActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.buttonProduct:
-                ImageActivity.displayActivity(this,urlNature,"Produit");
+                StudentsActivity.displayActivity(this);
                 break;
             case R.id.buttonStudents:
-                ImageActivity.displayActivity(this,urlEspace,"Student");
+                GroupActivity.displayActivity(this);
                 break;
         }
     }

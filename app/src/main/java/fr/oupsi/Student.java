@@ -1,26 +1,49 @@
 package fr.oupsi;
 
-import org.json.JSONObject;
-
 public class Student {
 
-    private String name;
+    private String avatar;
+    private String lastName;
+    private String firstName;
     private String email;
+    private String group;
     private String url;
 
-    public Student(JSONObject o){
-        name = o.optString("name","");
-        email = o.optString("email","");
-        url = o.optString("picture_url","");
+    public Student() {
+    }
+
+    public Student(String avatar, String lastName, String firstName, String email, String group, String url) {
+        this.setAvatar(avatar);
+        this.setLastName(lastName);
+        this.setFirstName(firstName);
+        this.setEmail(email);
+        this.setGroup(group);
+        this.setUrl(url);
     }
 
 
-    public String getName() {
-        return name;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getEmail() {
@@ -29,6 +52,14 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
     }
 
     public String getUrl() {

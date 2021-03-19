@@ -69,13 +69,13 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Student student=students.get(position);
-        holder.getTextViewName().setText(student.getName());
+        holder.getTextViewName().setText(student.getFirstName());
         holder.getTextViewEmail().setText(student.getEmail());
         Picasso.get().load(student.getUrl()).into(holder.getImageViewStudent());
         holder.getLayoutCellStudent().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImageActivity.displayActivity(activity,student.getUrl(),student.getName());
+                ImageActivity.displayActivity(activity,student.getUrl(),student.getFirstName());
             }
         });
     }
