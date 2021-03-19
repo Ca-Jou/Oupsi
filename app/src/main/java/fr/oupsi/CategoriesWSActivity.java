@@ -32,7 +32,7 @@ public class CategoriesWSActivity extends EpsiActivity {
         CategoryAdapter categoryAdapter=new CategoryAdapter(this,categories);
         recyclerView.setAdapter(categoryAdapter);
 
-        String url = "https://djemam.com/epsi/list.json";
+        String url = "https://djemam.com/epsi/categories.json";
         WSCall wsCall = new WSCall(url, new WSCall.Callback() {
             @Override
             public void onComplete(String result) {

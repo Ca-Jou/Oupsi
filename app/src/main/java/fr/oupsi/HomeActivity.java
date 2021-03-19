@@ -28,10 +28,10 @@ public class HomeActivity extends EpsiActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.buttonProduct:
-                ImageActivity.displayActivity(this,urlNature,"Produit");
+                CategoriesWSActivity.displayActivity(this);
                 break;
             case R.id.buttonStudents:
-                ImageActivity.displayActivity(this,urlEspace,"Student");
+                StudentsActivity.displayActivity(this);
                 break;
         }
     }
