@@ -3,6 +3,7 @@ package fr.oupsi;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,35 +14,37 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class StudentsActivity extends EpsiActivity {
+public class StudentsActivity extends EpsiActivity implements View.OnClickListener {
 
     public static void displayActivity(EpsiActivity activity){
         Intent intent=new Intent(activity,StudentsActivity.class);
         activity.startActivity(intent);
     }
     private ArrayList<Student> students;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_students);
-        setTitle("Students");
+        setContentView(R.layout.activity_group);
+        setTitle("Infos");
         showBack();
         students=new ArrayList<>();
-        RecyclerView recyclerView=findViewById(R.id.recyclerViewStudents);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        StudentAdapter studentAdapter=new StudentAdapter(this,students);
-        recyclerView.setAdapter(studentAdapter);
 
-        try {
+        Student johanna = new Student("johanna.png", "Jato", "Johanna", "johanna.jato@epsi.fr", "DevOps Groupe 1", "https://github.com/Johanna1506");
+        students.add(johanna);
+        Student camille = new Student("camille.png", "Jouan", "Camille", "camille.jouan@epsi.fr", "DevOps Groupe 1", "https://github.com/Ca-Jou");
+        students.add(camille);
+    }
 
-            JSONObject jsonObject= new JSONObject(Data.allData);
-            JSONArray jsonArray = jsonObject.getJSONArray("items");
-            for(int i=0;i<jsonArray.length();i++){
-                Student student=new Student(jsonArray.getJSONObject(i));
-                students.add(student);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.buttonJohanna:
+                HomeActivity.displayActivity(this);
+                break;
+            case R.id.buttonCamille:
+                HomeActivity.displayActivity(this);
+                break;
         }
     }
 }
