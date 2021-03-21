@@ -27,7 +27,8 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/black"
-        android:text="Prenom Nom" />
+        android:text="Prenom Nom"
+        android:textSize="18sp"/>
 
     <TextView
         android:id="@+id/textViewGroup"
@@ -35,7 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/black"
-        android:text="Groupe" />
+        android:text="Groupe"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/textViewEmail"
@@ -43,7 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/black"
-        android:text="prenom.nom@epsi.fr" />
+        android:text="prenom.nom@epsi.fr"
+        android:autoLink="all"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/textViewUrl"
@@ -51,6 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/black"
-        android:text="www.github.com/pseudo" />
+        android:text="www.github.com/pseudo"
+        android:autoLink="all"
+        android:textSize="16sp"/>
 
 </LinearLayout>

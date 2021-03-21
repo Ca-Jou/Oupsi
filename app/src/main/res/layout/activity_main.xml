@@ -20,7 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="@color/epsi_violet"
-        android:text="Students"/>
+        android:text="Students"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/buttonProduct"
@@ -29,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="@color/epsi_violet"
-        android:text="Categories"/>
+        android:text="Categories"
+        android:textSize="20sp"/>
 
 </LinearLayout>
